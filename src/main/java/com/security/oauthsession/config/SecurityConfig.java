@@ -34,6 +34,7 @@ public class SecurityConfig {
         //client는 필터와 내부 정보 등을 일일이 커스텀해줘야 한다.
         http
                 .oauth2Login((oauth2)->oauth2
+                        .loginPage("/login")
                         .userInfoEndpoint((userInfoEndpointConfig ->
                                 userInfoEndpointConfig.userService(oAuth2UserService))));
 
